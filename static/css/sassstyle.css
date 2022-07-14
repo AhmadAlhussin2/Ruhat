@@ -1,19 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+@font-face {
+  font-family: "shago";
+  src: url(../fonts/shago/ZtShago-ExtraBold.ttf) format("truetype");
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body,
-input {
-  font-family: "Poppins", sans-serif;
-}
-
-.title {
-  font-size: 2.2rem;
-  color: #13505D;
-  margin-bottom: 10px;
 }
 
 .plain-text {
@@ -22,6 +15,29 @@ input {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+body,
+input {
+  font-family: "Poppins", sans-serif;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.tex-center {
+  text-align: center;
 }
 
 .btn {
@@ -47,6 +63,17 @@ input {
   background-color: #fff;
   color: #005F75;
   border: 2px solid #005F75;
+}
+
+body,
+input {
+  font-family: "Poppins", sans-serif;
+}
+
+.title {
+  font-size: 2.2rem;
+  color: #13505D;
+  margin-bottom: 10px;
 }
 
 .transparent {

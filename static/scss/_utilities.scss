@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'shago';
+    src: url(../fonts/shago/ZtShago-ExtraBold.ttf) format('truetype');
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+$first-dark-color: #13505D;
+$second-dark-color: #005F75;
+$middle-color: #8BB7B6;
+$second-light-color: #A9C0C6;
+$first-light-color: #DDE2E8;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.plain-text {
+    cursor: default;
+    user-select: none;
+}
+
+body,
+input {
+    font-family: "Poppins", sans-serif;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.tex-center {
+    text-align: center;
+}

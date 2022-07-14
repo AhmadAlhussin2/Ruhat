@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,43 +9,62 @@
     <link rel="stylesheet" href="../static/css/workingspace.css">
     <link rel="shortcut icon" href="../static/img/icon.svg" type="image/x-icon">
 </head>
+
 <body>
     <div class="prompt">
         <form class="prompt-form" method="POST">
-            <p class="prompt-text"><p>
+            <p class="prompt-text">
+            <p>
             <div class="input-field question-holder">
-                <input type="text" name="quiz_name" class="prompt-input" placeholder="Enter your quiz name"/>
+                <input type="text" name="quiz_name" class="prompt-input" placeholder="Enter your quiz name" />
             </div>
             <div class="btn-container">
                 <input type="submit" class="prompt-submit" value="proceed">
                 <button type="button" class="prompt-cancel"> Cancel </button>
             </div>
-        </form>  
+        </form>
     </div>
 
     <div class="prompt2">
         <form class="prompt-form2" method="POST">
-          <p class="prompt-text"></p>
+            <p class="prompt-text"></p>
             <div class="input-field question-holder">
-                <input type="text" name="question" class="prompt-input" placeholder="Enter your question"/>
+                <input type="text" name="question" class="prompt-input" placeholder="Enter your question" />
             </div>
             <div class="options-container2">
-                <div class="option input-field"><div class="letter plain-text">A</div><div class="option-statement"><input type="text" class="prompt-input" name="option_A" placeholder="Enter the first option"/></div></div>
-                <div class="option input-field"><div class="letter plain-text">B</div><div class="option-statement"><input type="text" class="prompt-input" name="option_B" placeholder="Enter the second option"/></div></div>
-                <div class="option input-field"><div class="letter plain-text">C</div><div class="option-statement"><input type="text" class="prompt-input" name="option_C" placeholder="Enter the third option"/></div></div>
-                <div class="option input-field"><div class="letter plain-text">D</div><div class="option-statement"><input type="text" class="prompt-input" name="option_D" placeholder="Enter the fourth option"/></div></div>
+                <div class="option input-field">
+                    <div class="letter plain-text">A</div>
+                    <div class="option-statement"><input type="text" class="prompt-input" name="option_A"
+                            placeholder="Enter the first option" /></div>
+                </div>
+                <div class="option input-field">
+                    <div class="letter plain-text">B</div>
+                    <div class="option-statement"><input type="text" class="prompt-input" name="option_B"
+                            placeholder="Enter the second option" /></div>
+                </div>
+                <div class="option input-field">
+                    <div class="letter plain-text">C</div>
+                    <div class="option-statement"><input type="text" class="prompt-input" name="option_C"
+                            placeholder="Enter the third option" /></div>
+                </div>
+                <div class="option input-field">
+                    <div class="letter plain-text">D</div>
+                    <div class="option-statement"><input type="text" class="prompt-input" name="option_D"
+                            placeholder="Enter the fourth option" /></div>
+                </div>
             </div>
 
-          
+
             <div class="btn-container">
                 <input type="submit" class="prompt-submit" value="proceed" />
                 <button type="button" class="prompt-cancel2"> Cancel </button>
             </div>
-        </form>  
+        </form>
     </div>
 
     <div class="prompt3">
-        <form class="prompt-container" id="share-form" action="{{ url_for('quiz_results_bp.quiz_results',mode='sign-in-mode') }}" method="POST">
+        <form class="prompt-container" id="share-form"
+            action="{{ url_for('quiz_results_bp.quiz_results',mode='sign-in-mode') }}" method="POST">
             <div class="exit-icon">
                 <i class="fa fa-times fa-2x"></i>
             </div>
@@ -55,16 +75,16 @@
             <div id="table-top" class="table-top">
                 <h2>List of the best 5</h2>
             </div>
-            <div class="button-window" >
+            <div class="button-window">
                 <button type="button" id="show-result" class="btn solid">
                     Table of best 5
                 </button>
                 <button type="button" id="qr-code" class="btn solid">QR code</button>
 
-                    <button class="btn solid p0" type="submit" id="download-result">
-                        
-                        Download results
-                    </button>
+                <button class="btn solid p0" type="submit" id="download-result">
+
+                    Download results
+                </button>
 
             </div>
         </form>
@@ -75,121 +95,130 @@
 
         <div class="nav-bar-container">
 
-                <a href="#" class="main-title">
-                    Ruhat!
-                </a>
-                <div class="menu-btn">
-                    <span></span>
-                </div>
+            <a href="#" class="main-title">
+                Ruhat!
+            </a>
+            <div class="menu-btn">
+                <span></span>
+            </div>
             <div class="profile-container">
-                <div class="profile-icon" data-initials="AA"><button class="edit-profile"><i class="fa-solid fa-edit fa-bold"></i></button></div>
+                <div class="profile-icon" data-initials="AA"><button class="edit-profile"><i
+                            class="fa-solid fa-edit fa-bold"></i></button></div>
                 <ul name="settings" class="dropdown-menu">
                     <a href="{{url_for('auth.logout')}}">
                         <li class="drop-down-item">
                             logout
                         </li>
                     </a>
-            </ul>
+                </ul>
+            </div>
+            <div class="dropdown-bg"></div>
         </div>
-        <div class="dropdown-bg"></div>
-    </div>
-    <div class="home-container">
-        <div class="left-side">
-            <h3 class="plain-text">Previous quizzes:</h3>
-            <div class="quizzes-list">
-                {% if quiz_list %}
-                {% for quiz in quiz_list %}
-                <div  class="previous-quiz quiz-1">
-                    <a id="go-to-previous-quiz" href="/workspace?id={{quiz['id']}}">
-                        <div>
-                            {{quiz['name']}}
+        <div class="home-container">
+            <div class="left-side">
+                <h3 class="plain-text">Previous quizzes:</h3>
+                <div class="quizzes-list">
+                    {% if quiz_list %}
+                    {% for quiz in quiz_list %}
+                    <div class="previous-quiz quiz-1">
+                        <a id="go-to-previous-quiz" href="/workspace?id={{quiz['id']}}">
+                            <div>
+                                {{quiz['name']}}
+                            </div>
+                        </a>
+                        <div class="icons-container">
+                            <button class="share-quiz icon">
+                                <i class="fa fa-share "></i>
+                            </button>
+                            <button class="delete-quiz icon">
+                                <i class="fa fa-trash "></i>
+                            </button>
                         </div>
-                    </a>
-                    <div class="icons-container">
-                        <button class="share-quiz icon">
-                            <i class="fa fa-share "></i>
-                        </button>
-                        <button class="delete-quiz icon">
-                            <i class="fa fa-trash "></i>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    <div class="previous-quiz flex-center add-quiz ">
+                        <button class="icon" style="margin-left: auto;">
+                            <i class="fa fa-add"></i>
                         </button>
                     </div>
+
+
                 </div>
-                {% endfor %}
-            {% endif %}
-                <div class="previous-quiz flex-center add-quiz ">
-                    <button class="icon" style="margin-left: auto;">
-                        <i class="fa fa-add"></i>
-                    </button>
-                </div>
-
-
             </div>
-        </div>
-        <div class="right-side">
-            {% set current_quiz = request.args.get('id') | get_quiz_from_db %}
-            {% set options_letters = ["A","B","C","D"]%}
-            {% if current_quiz.name != null %}
-            <div class="quiz-header">
-                <h2 class="quiz-name">{{current_quiz.name}}</h2>
-                <label class="switch">
-                            {% if current_quiz['opened']==1 %}
-                            <input type="checkbox" checked>
-                                <span class="slider slider-clicked"></span>
-                            {% else %}
-                            <input type="checkbox" >
-                                <span class="slider"></span>
-                            {% endif %}
-                </label>
-            </div>
-            
-
-
-
-            <div class="questions-list">
-                {% for question in current_quiz.questions %}
-                <div class="question-1">
-                    <div class="question-panel flex-center">
-                        <div class="question-statement" contenteditable="true">
-                            {{question.question}}
-                        </div>
-                        <button class="icon delete-question ">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                        <button class="icon expand-icon collapsible">
-                            <i class="fa fa-angle-down"></i>
-                        </button>
-                    </div>
-                    <div class="options-container">
-                        {% for i in range(4)%}
-                        {% if question.options[i] == question.answer%}
-                        <div class="option"><div class="letter plain-text correct-answer">{{options_letters[i]}}</div><div class="option-statement" contenteditable="true"> {{question.options[i]}}</div></div>
+            <div class="right-side">
+                {% set current_quiz = request.args.get('id') | get_quiz_from_db %}
+                {% set options_letters = ["A","B","C","D"]%}
+                {% if current_quiz.name != null %}
+                <div class="quiz-header">
+                    <h2 class="quiz-name">{{current_quiz.name}}</h2>
+                    <label class="switch">
+                        {% if current_quiz['opened']==1 %}
+                        <input type="checkbox" checked>
+                        <span class="slider slider-clicked"></span>
                         {% else %}
-
-                        <div class="option"><div class="letter plain-text">{{options_letters[i]}}</div><div class="option-statement" contenteditable="true">
-                        {{question.options[i]}}</div></div>
-
+                        <input type="checkbox">
+                        <span class="slider"></span>
                         {% endif %}
-                        {% endfor %}
-                        </div>
+                    </label>
                 </div>
-                {% endfor %}
-                <div class="add-question question-panel flex-center">
-                    <button class="icon" style="margin-left: auto;">
-                        <i class="fa fa-add"></i>
-                    </button>
-                </div>
-            </div>
-            {% else %}
-            <div class="no-quiz-container">
-                <h2 class="plain-text"><i class="fa fa-arrow-left" style="margin-right: 1rem;"></i>Select a quiz or create a new one</h2>
-            </div>
-            {% endif %}
 
+
+
+
+                <div class="questions-list">
+                    {% for question in current_quiz.questions %}
+                    <div class="question-1">
+                        <div class="question-panel flex-center">
+                            <div class="question-statement" contenteditable="true">
+                                {{question.question}}
+                            </div>
+                            <button class="icon delete-question ">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                            <button class="icon expand-icon collapsible">
+                                <i class="fa fa-angle-down"></i>
+                            </button>
+                        </div>
+                        <div class="options-container">
+                            {% for i in range(4)%}
+                            {% if question.options[i] == question.answer%}
+                            <div class="option">
+                                <div class="letter plain-text correct-answer">{{options_letters[i]}}</div>
+                                <div class="option-statement" contenteditable="true"> {{question.options[i]}}</div>
+                            </div>
+                            {% else %}
+
+                            <div class="option">
+                                <div class="letter plain-text">{{options_letters[i]}}</div>
+                                <div class="option-statement" contenteditable="true">
+                                    {{question.options[i]}}</div>
+                            </div>
+
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="add-question question-panel flex-center">
+                        <button class="icon" style="margin-left: auto;">
+                            <i class="fa fa-add"></i>
+                        </button>
+                    </div>
+                </div>
+                {% else %}
+                <div class="no-quiz-container">
+                    <h2 class="plain-text"><i class="fa fa-arrow-left" style="margin-right: 1rem;"></i>Select a quiz or
+                        create a new one</h2>
+                </div>
+                {% endif %}
+
+            </div>
         </div>
-    </div>
     </div>
     <script src="../static/js/workspace.js"></script>
     <script src="https://kit.fontawesome.com/7e15f56592.js" crossorigin="anonymous">
     </script>
 </body>
+
 </html>

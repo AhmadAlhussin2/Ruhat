@@ -1,17 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
-
-$first-dark-color: #13505D;
-$second-dark-color: #005F75;
-$middle-color: #8BB7B6;
-$second-light-color: #A9C0C6;
-$first-light-color: #DDE2E8;
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+@import 'utilities';
+@import 'buttons';
 body,
 input {
     font-family: "Poppins", sans-serif;
@@ -23,37 +11,6 @@ input {
     margin-bottom: 10px;
 }
 
-.plain-text {
-    cursor: default;
-    user-select: none;
-}
-
-.btn {
-    width: 150px;
-    height: 49px;
-    border: 2px solid #fff;
-    outline: none;
-    border-radius: 49px;
-    cursor: pointer;
-    background-color: $second-dark-color;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin: 10px 0;
-    transition: .3s linear;
-
-    &:hover {
-        background-color: #fff;
-        color: $second-dark-color;
-        border: 2px solid $second-dark-color;
-    }
-
-    &:focus {
-        background-color: #fff;
-        color: $second-dark-color;
-        border: 2px solid $second-dark-color;
-    }
-}
 
 .transparent {
     margin: 0;
